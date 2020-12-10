@@ -28,5 +28,18 @@ public class responderModelTest {
         String respuesta = responder.answer(pregunta);
         assertThat(respuesta).isEqualTo("9");
     }
-
+    @Test
+    public void  cuandoPreguntanPorElNumeroMasAltoDeCuatroResponde262144(){
+        ResponderModel responder = new ResponderModel();
+        String pregunta = "15cffd30: which of the following numbers is the largest: 4, 255, 837, 262144";
+        String respuesta = responder.answer(pregunta);
+        assertThat(respuesta).isEqualTo("262144");
+    }
+    @Test
+    public void  cuandoPreguntanPorLaMultiplicacionDeDosValoresResponder20(){
+        ResponderModel responder = new ResponderModel();
+        String pregunta = "f2802ca0: what is 2 multiplied by 10";
+        String respuesta = responder.answer(pregunta);
+        assertThat(respuesta).isEqualTo("20");
+    }
 }
